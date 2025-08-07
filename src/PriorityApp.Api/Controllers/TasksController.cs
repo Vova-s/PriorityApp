@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using PriorityApp.PriorityApp.Api.Services;
-using PriorityApp.PriorityApp.Api.Stores;
-using PriorityApp.PriorityApp.Shared;
+using PriorityApp.Api.Services;
+using PriorityApp.Api.Stores;
+using PriorityApp.Shared;
 
-namespace PriorityApp.PriorityApp.Api.Controllers;
+namespace PriorityApp.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -23,8 +23,8 @@ public class TasksController : ControllerBase
     }
 
     [HttpGet("{userId:guid}")]
-    public async Task<ActionResult<List<TaskItem>>> GetAll(Guid userId)
-        => Ok((await _taskStore.GetAllAsync(userId)).ToList());
+    public async Task<ActionResult<List<TaskItem>>> GetAll(Guid userId) =>
+        Ok((await _taskStore.GetAllAsync(userId)).ToList());
 
     [HttpPost("{userId:guid}")]
     public async Task<ActionResult<TaskItem>> Create(Guid userId, TaskItem dto)
@@ -32,10 +32,10 @@ public class TasksController : ControllerBase
         var pref = await _prefStore.GetAsync(userId)
                ?? throw new InvalidOperationException("User preferences not set.");
 
-        dto.Id = Guid.NewGuid();
-        dto.UserId = userId;
-        dto.CreatedAt = DateTime.UtcNow;
-        dto.UpdatedAt = DateTime.UtcNow;
+        dto.Id           = Guid.NewGuid();
+        dto.UserId       = userId;
+        dto.CreatedAt    = DateTime.UtcNow;
+        dto.UpdatedAt    = DateTime.UtcNow;
         dto.ComputedScore = _scoring.CalculateScore(dto, pref);
 
         await _taskStore.AddAsync(dto);
@@ -45,13 +45,13 @@ public class TasksController : ControllerBase
     [HttpPut("{userId:guid}/{taskId:guid}")]
     public async Task<IActionResult> Update(Guid userId, Guid taskId, TaskItem dto)
     {
-        // This would only work if you want to assign a default TaskItem instead of returning
-        var existing = await _taskStore.GetAsync(userId, taskId) ?? new TaskItem();
+        var existing = await _taskStore.GetAsync(userId, taskId)
+                      ?? throw new KeyNotFoundException("Task not found.");
 
         var pref = await _prefStore.GetAsync(userId)
                 ?? throw new InvalidOperationException("Preferences missing.");
 
-        // Оновлюємо поля (не змінюємо Id і UserId)
+        // ---- copy modifiable fields ----
         existing.Title            = dto.Title;
         existing.Domain           = dto.Domain;
         existing.DueDate          = dto.DueDate;

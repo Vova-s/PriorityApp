@@ -1,6 +1,6 @@
-using PriorityApp.PriorityApp.Shared;
+using PriorityApp.Shared;
 
-namespace PriorityApp.PriorityApp.Api.Services;
+namespace PriorityApp.Api.Services;
 
 public interface IScoringService
 {

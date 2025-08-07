@@ -9,7 +9,7 @@
     <ItemGroup>
       <Folder Include="src\PriorityApp.Api\Data\" />
       <Folder Include="src\PriorityApp.Api\Models\" />
-      <Folder Include="src\PriorityApp.Blazor\Components\" />
+      <Folder Include="src\PriorityApp.Blazor\" />
       <Folder Include="src\PriorityApp.Blazor\Pages\" />
       <Folder Include="tests\PriorityApp.Api.Tests\" />
       <Folder Include="tests\PriorityApp.Blazor.Tests\" />
@@ -28,10 +28,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Counter.razor" />
-      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Error.razor" />
+      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\App.razor" />
+      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Layout\MainLayout.razor" />
       <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Home.razor" />
-      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Weather.razor" />
     </ItemGroup>
 
 </Project>

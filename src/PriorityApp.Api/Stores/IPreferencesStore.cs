@@ -1,6 +1,6 @@
-namespace PriorityApp.PriorityApp.Api.Stores;
-
 using PriorityApp.Shared;
+
+namespace PriorityApp.Api.Stores;
 
 public interface IPreferencesStore
 {

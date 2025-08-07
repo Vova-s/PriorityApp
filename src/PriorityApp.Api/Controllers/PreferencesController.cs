@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using PriorityApp.PriorityApp.Api.Stores;
-using PriorityApp.PriorityApp.Shared;
+using PriorityApp.Api.Stores;
+using PriorityApp.Shared;
 
-namespace PriorityApp.PriorityApp.Api.Controllers;
+namespace PriorityApp.Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -24,7 +24,7 @@ public class PreferencesController : ControllerBase
         if (dto.CareerWeight + dto.LifeWeight != 1m)
             return BadRequest("CareerWeight + LifeWeight must equal 1.");
 
-        dto.UserId = userId;               // гарантуємо правильний Id
+        dto.UserId = userId;               // ensure the correct Id
         await _store.SetAsync(dto);
         return NoContent();
     }
