@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityApp", "PriorityApp.csproj", "{7694FFF4-4B81-46AA-A01C-0C4FC9D17599}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7694FFF4-4B81-46AA-A01C-0C4FC9D17599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7694FFF4-4B81-46AA-A01C-0C4FC9D17599}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7694FFF4-4B81-46AA-A01C-0C4FC9D17599}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7694FFF4-4B81-46AA-A01C-0C4FC9D17599}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

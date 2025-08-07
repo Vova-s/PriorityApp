@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="src\PriorityApp.Api\Data\" />
+      <Folder Include="src\PriorityApp.Api\Models\" />
+      <Folder Include="src\PriorityApp.Blazor\Components\" />
+      <Folder Include="src\PriorityApp.Blazor\Pages\" />
+      <Folder Include="tests\PriorityApp.Api.Tests\" />
+      <Folder Include="tests\PriorityApp.Blazor.Tests\" />
+      <Folder Include="tests\PriorityApp.Shared.Tests\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Components\Pages\Counter.razor" />
+      <_ContentIncludedByDefault Remove="Components\Pages\Error.razor" />
+      <_ContentIncludedByDefault Remove="Components\Pages\Home.razor" />
+      <_ContentIncludedByDefault Remove="Components\Pages\Weather.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Counter.razor" />
+      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Error.razor" />
+      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Home.razor" />
+      <AdditionalFiles Include="src\PriorityApp.Blazor\Components\Pages\Weather.razor" />
+    </ItemGroup>
+
+</Project>
